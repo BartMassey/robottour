@@ -45,7 +45,6 @@ def process_tour(fd, n):
 # Do the processing.
 if __name__ == "__main__":
     # Set up the display.
-    screensize(1000, 1000)
     setworldcoordinates(0, 0, 1, 1)
 
     # Read from stdin if no arguments, else treat each
