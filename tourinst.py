@@ -8,13 +8,16 @@ from random import random
 from math import sqrt
 from sys import argv
 
-# Generate a random coordinate in the range 0..n.
 def coord(n):
+    """Generate a random coordinate in the range 0..1
+    distributed according to sqrt."""
+
     return round(sqrt(random()), 3)
 
-# Generate a list of n random points with coords in the range
-# 0..n
 def points(n):
+    """Generate a list of n random points with coords in the
+    range 0..1"""
+
     result = []
     for _ in range(n):
         result.append((coord(n), coord(n)))

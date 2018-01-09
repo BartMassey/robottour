@@ -11,6 +11,8 @@ from readpoints import read_points
 from dist import dist
 
 def nearest_neighbors(ps):
+    "Return the indexes of the closest pair of points in ps."
+
     min_dist = dist(ps[0], ps[1])
     min_indices = (0, 1)
     for i in range(len(ps)):
@@ -24,6 +26,9 @@ def nearest_neighbors(ps):
     return min_indices
 
 def extend_path(path, ps):
+    """Add the closest point in ps to an end of path to that end
+    of path and delete it from ps."""
+
     min_dist = None
     min_indices = None
     for i in range(len(ps)):
@@ -40,6 +45,8 @@ def extend_path(path, ps):
     del ps[i]
 
 def nn_tour(ps):
+    "Find a nearest-neighbor tour of ps."
+
     start, end = nearest_neighbors(ps)
     path = [ps[start], ps[end]]
     del ps[start]
@@ -48,7 +55,7 @@ def nn_tour(ps):
         extend_path(path, ps)
     return path
 
-# Generate an instance and display a minimum tour.
+# Find and display a nearest-neighbor tour.
 if __name__ == "__main__":
     ps = read_points(stdin)
     m = nn_tour(ps)
