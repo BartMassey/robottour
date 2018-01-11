@@ -46,6 +46,7 @@ def process_tour(fd, n):
 if __name__ == "__main__":
     # Set up the display.
     setworldcoordinates(0, 0, 1, 1)
+    speed(8)
 
     # Read from stdin if no arguments, else treat each
     # argument as a tour filename.
