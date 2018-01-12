@@ -19,6 +19,12 @@ programs.
    the point cloud given on `stdin`, writing the solution to
    `stdout`.
 
+* `nnltour.py` is a modification to `nntour.py` that does
+   limited lookahead. Lookahead can be specified with a
+   command-line argument. Lookahead 1 is good, 2 is great
+   but too slow on large instances, 3 or more is going to be
+   quite expensive.
+
 * `pairtour.py` connects nearest available neighbors
    piecewise to find a reasonable tour of the point cloud
    given on `stdin`, writing the solution to `stdout`.
